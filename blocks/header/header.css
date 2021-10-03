@@ -1,7 +1,6 @@
 .header {
     max-width: 880px;
     min-width: 320px;
-    /* width: calc(100% - 400px);*/
     width: 68.75vw;
     height: calc(74px - 0.01875 * (1280px - 100vw));
     position: relative;
