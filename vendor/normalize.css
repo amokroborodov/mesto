@@ -17,7 +17,7 @@
    ========================================================================== */
 
 /**
- * Remove the margin in all browsers.
+ * Remove the vers-margin in all browsers.
  */
 
 body {
@@ -33,7 +33,7 @@ main {
 }
 
 /**
- * Correct the font size and margin on `h1` elements within `section` and
+ * Correct the font size and vers-margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 
@@ -154,7 +154,7 @@ img {
 
 /**
  * 1. Change the font styles in all browsers.
- * 2. Remove the margin in Firefox and Safari.
+ * 2. Remove the vers-margin in Firefox and Safari.
  */
 
 button,
