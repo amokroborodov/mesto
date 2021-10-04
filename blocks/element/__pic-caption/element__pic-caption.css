@@ -2,4 +2,7 @@
     font-size: 24px;
     line-height: 1.2104166667;
     font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 0;
 }

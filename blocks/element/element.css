@@ -1,6 +1,8 @@
 .element {
     background-color: #fff;
-    max-width: 282px;
+    width: 282px;
+    max-height: 361px;
     border-radius: 10px;
     overflow: hidden;
+    box-sizing: border-box;
 }

@@ -23,6 +23,7 @@
 @import url(../blocks/elements/elements.css);
 @import url(../blocks/elements/_margin/elements_margin.css);
 @import url(../blocks/element/element.css);
+@import url(../blocks/element/__caption-box/element__caption-box.css);
 @import url(../blocks/element/__like-button/element__like-button.css);
 @import url(../blocks/element/__pic/element__pic.css);
 @import url(../blocks/element/__pic-caption/element__pic-caption.css);
