@@ -7,6 +7,9 @@
     height: 24px;
     border: 1px solid #fff;
     display: inline-block;
-    align-self: center;
-    justify-self: end;
+    background-color: transparent;
+    font: inherit;
+    color: inherit;
+    padding: 0;
+    margin: 0;
 }
