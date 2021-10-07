@@ -1,0 +1,5 @@
+@media screen and (max-width: 767px) {
+    .profile__name_margin {
+        margin: 0 0 14px 0;
+    }
+}
