@@ -18,7 +18,9 @@
                 <img src="./images/profile__avatar.jpg" alt="Фото профиля"
                      class="profile__avatar profile__avatar_margin">
                 <article class="profile__info">
-                    <h1 class="profile__name">Жак-Ив Кусто<button class="profile__edit-button"></button></h1>
+                    <h1 class="profile__name">Жак-Ив Кусто
+                        <button class="profile__edit-button"></button>
+                    </h1>
                     <p class="profile__description">Исследователь океана</p>
                 </article>
             </div>
@@ -27,27 +29,51 @@
         <section class="elements vers-margin elements_margin">
             <div class="element">
                 <img src="./images/Karachaevsk.png" alt="Фото строения в городе Карачаевск" class="element__pic">
-                <div class="element__caption-box"><p class="element__pic-caption">Карачаевск</p><button class="element__like-button"></button></div>
+                <div class="element__caption-box"><p class="element__pic-caption">Карачаевск</p>
+                    <button class="element__like-button"></button>
+                </div>
             </div>
             <div class="element">
                 <img src="./images/Elbrus.png" alt="Фото горы Эльбрус" class="element__pic">
-                <div class="element__caption-box"><p class="element__pic-caption">Гора Эльбрус</p><button class="element__like-button"></button></div>
+                <div class="element__caption-box"><p class="element__pic-caption">Гора Эльбрус</p>
+                    <button class="element__like-button"></button>
+                </div>
             </div>
             <div class="element">
                 <img src="./images/Dombay.png" alt="Фото заснеженных гор Домбая" class="element__pic">
-                <div class="element__caption-box"><p class="element__pic-caption">Домбай</p><button class="element__like-button"></button></div>
+                <div class="element__caption-box"><p class="element__pic-caption">Домбай</p>
+                    <button class="element__like-button"></button>
+                </div>
             </div>
             <div class="element">
                 <img src="./images/Elbrus.png" alt="Фото горы Эльбрус" class="element__pic">
-                <div class="element__caption-box"><p class="element__pic-caption">Гора Эльбрус</p><button class="element__like-button"></button></div>
+                <div class="element__caption-box"><p class="element__pic-caption">Гора Эльбрус</p>
+                    <button class="element__like-button"></button>
+                </div>
             </div>
             <div class="element">
                 <img src="./images/Dombay.png" alt="Фото заснеженных гор Домбая" class="element__pic">
-                <div class="element__caption-box"><p class="element__pic-caption">Домбай</p><button class="element__like-button"></button></div>
+                <div class="element__caption-box"><p class="element__pic-caption">Домбай</p>
+                    <button class="element__like-button"></button>
+                </div>
             </div>
             <div class="element">
                 <img src="./images/Karachaevsk.png" alt="Фото строения в городе Карачаевск" class="element__pic">
-                <div class="element__caption-box"><p class="element__pic-caption">Карачаево&#8209;Черкессия</p><button class="element__like-button"></button></div>
+                <div class="element__caption-box"><p class="element__pic-caption">Карачаево&#8209;Черкессия</p>
+                    <button class="element__like-button"></button>
+                </div>
+            </div>
+        </section>
+        <section class="popup">
+            <div class="popup__content">
+                <form class="popup__form">
+                    <h2 class="popup__title">Редактировать профиль</h2>
+                    <input type="text" class="popup__form_input_name" placeholder="Жак-Ив Кусто" required>
+                    <input type="text" class="popup__form_input_description" placeholder="Исследователь океана"
+                           required>
+                    <button class="popup__form_button_submit" type="submit">Сохранить</button>
+                    <button class="popup__close-button" type="button"></button>
+                </form>
             </div>
         </section>
     </main>
