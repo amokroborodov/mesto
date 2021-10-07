@@ -1,5 +1,5 @@
 .popup__form_input_name {
-    width: 358px;
+    width: 100%;
     min-height: 27px;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -15,3 +15,6 @@
 .popup__form_input_name::placeholder {
     color: #000000;
 }
+
+
+
