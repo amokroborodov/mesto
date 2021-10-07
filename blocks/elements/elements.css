@@ -4,7 +4,6 @@
     grid-template-rows: auto;
     max-width: 880px;
     min-width: 320px;
-    width: 68.75vw;
     grid-gap: 20px 17px;
 }
 
@@ -12,6 +11,7 @@
     .elements {
         grid-template-columns: repeat(2, 1fr);
         justify-items: center;
+        max-width: 584px;
     }
 }
 
