@@ -14,7 +14,7 @@
         font-size: 27px;
         line-height: 1.2222222222;
         text-align: center;
-        width: 217px;
+        max-width: 217px;
 
     }
 }
