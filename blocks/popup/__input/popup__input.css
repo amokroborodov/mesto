@@ -1,4 +1,4 @@
-.popup__input-description {
+.popup__input {
     width: 100%;
     min-height: 27px;
     border: none;
@@ -9,9 +9,5 @@
     font-size: 14px;
     line-height: 1.2142857143;
     color: #000000;
-    margin-bottom: 48px;
 }
 
-.popup__input-description::placeholder {
-    color: #000000;
-}
