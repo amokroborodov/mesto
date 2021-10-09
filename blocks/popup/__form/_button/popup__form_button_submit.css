@@ -11,4 +11,10 @@
     font-size: 18px;
     line-height: 1.2222222222;
     text-align: center;
+    transition: opacity 0.1s linear;
+}
+
+.popup__form_button_submit:hover {
+    opacity: 0.8;
+    cursor: pointer;
 }
