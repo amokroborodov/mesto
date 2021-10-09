@@ -7,7 +7,7 @@
     height: 32px;
     top: -38px;
     right: -38px;
-    background: url("../../../images/close-button.svg");
+    background: url("../../../../images/close-button.svg");
     background-size: 32px 32px;
     transition: opacity 0.1s linear;
 }
