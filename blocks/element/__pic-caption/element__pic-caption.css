@@ -3,6 +3,7 @@
     line-height: 1.2104166667;
     font-weight: bold;
     text-overflow: ellipsis;
+    white-space: nowrap;
     overflow: hidden;
     margin: 0;
     max-width: 190px;
