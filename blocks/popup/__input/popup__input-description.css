@@ -1,4 +1,4 @@
-.popup__form_input_description {
+.popup__input-description {
     width: 100%;
     min-height: 27px;
     border: none;
@@ -12,6 +12,6 @@
     margin-bottom: 48px;
 }
 
-.popup__form_input_description::placeholder {
+.popup__input-description::placeholder {
     color: #000000;
 }

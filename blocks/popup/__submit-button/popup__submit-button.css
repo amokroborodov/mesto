@@ -1,4 +1,4 @@
-.popup__form_button_submit {
+.popup__submit-button {
     border: none;
     appearance: none;
     -webkit-appearance: none;
@@ -14,7 +14,7 @@
     transition: opacity 0.1s linear;
 }
 
-.popup__form_button_submit:hover {
+.popup__submit-button:hover {
     opacity: 0.8;
     cursor: pointer;
 }
