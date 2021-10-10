@@ -24,15 +24,15 @@ function submitForm(event) {
     closePopup();
 }
 
-function popupClickHandler(event) {
-    if (event.target.classList.contains('popup')) {
-        closePopup();
-    }
-}
+// function popupClickHandler(event) {
+//     if (event.target.classList.contains('popup')) {
+//         closePopup();
+//     }
+// }
 
 profileEditButton.addEventListener('click', openPopup);
 
 popupCloseButton.addEventListener('click', closePopup);
-popup.addEventListener('mouseup', popupClickHandler);
+// popup.addEventListener('mouseup', popupClickHandler);
 
 popupForm.addEventListener('submit', submitForm);

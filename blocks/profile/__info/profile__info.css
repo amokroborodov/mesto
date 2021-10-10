@@ -1,5 +1,5 @@
 .profile__info {
-    width: 336px;
+    min-width: 336px;
     position: relative;
     align-items: center;
 }

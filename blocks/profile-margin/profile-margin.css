@@ -1,9 +1,9 @@
-.profile_margin {
+.profile-margin {
     margin-bottom: 50px;
 }
 
 @media screen and (max-width: 767px) {
-    .profile_margin {
+    .profile-margin {
         margin-bottom: 36px;
     }
 }

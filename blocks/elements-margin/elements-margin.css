@@ -1,0 +1,9 @@
+.elements-margin {
+    margin: 0 auto 66px auto;
+}
+
+@media screen and (max-width: 767px) {
+    .elements-margin {
+        margin-bottom: 48px;
+    }
+}
