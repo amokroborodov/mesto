@@ -1,14 +1,21 @@
 .profile {
-    width: 68.75vw;
-    max-width: 880px;
-    min-width: 320px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  width: 68.75vw;
+  max-width: 880px;
+  min-width: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
 }
 
 @media screen and (max-width: 1000px) {
-    .profile {
-        flex-direction: column;
-    }
+  .profile {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .profile {
+    margin-bottom: 36px;
+  }
 }
