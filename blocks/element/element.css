@@ -1,7 +1,7 @@
 .element {
-    background-color: #fff;
-    width: 282px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-sizing: border-box;
+  background-color: #fff;
+  width: 282px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-sizing: border-box;
 }

@@ -8,20 +8,20 @@ const popupInputDescription = document.querySelector('.popup__input_type_descrip
 const profileDescription = document.querySelector('.profile__description');
 
 function closePopup() {
-    popup.classList.remove('popup_opened');
+  popup.classList.remove('popup_opened');
 }
 
 function openPopup() {
-    popup.classList.add('popup_opened');
-    popupInputName.value = profileName.textContent;
-    popupInputDescription.value = profileDescription.textContent;
+  popup.classList.add('popup_opened');
+  popupInputName.value = profileName.textContent;
+  popupInputDescription.value = profileDescription.textContent;
 }
 
 function submitForm(event) {
-    event.preventDefault();
-    profileName.textContent = popupInputName.value;
-    profileDescription.textContent = popupInputDescription.value;
-    closePopup();
+  event.preventDefault();
+  profileName.textContent = popupInputName.value;
+  profileDescription.textContent = popupInputDescription.value;
+  closePopup();
 }
 
 // function popupClickHandler(event) {
