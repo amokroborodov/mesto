@@ -33,7 +33,7 @@
       <p class="footer__text">&copy; 2020 Mesto Russia</p>
     </footer>
   </div>
-  <div class="popup">
+  <div class="popup" id="popupEditProfile">
     <div class="popup__content">
       <form class="popup__form" name="edit-profile-form">
         <h2 class="popup__title">Редактировать профиль</h2>
@@ -46,7 +46,24 @@
         </fieldset>
         <button class="popup__submit-button" type="submit">Сохранить</button>
       </form>
-      <button class="popup__close-button" type="button"></button>
+      <button class="popup__close-button" type="button" id="editProfileCloseButton"></button>
+    </div>
+  </div>
+
+  <div class="popup" id="popupAddElement">
+    <div class="popup__content">
+      <form class="popup__form" name="add-element-form">
+        <h2 class="popup__title">Новое место</h2>
+        <fieldset class="popup__fieldset">
+          <input type="text" class="popup__input popup__input_type_name"
+                 placeholder="Название" required
+                 name="popup-form-name">
+          <input type="text" class="popup__input popup__input_type_description"
+                 placeholder="Ссылка на картинку" required name="popup-form-description">
+        </fieldset>
+        <button class="popup__submit-button" type="submit">Сохранить</button>
+      </form>
+      <button class="popup__close-button" type="button" id="addElementCloseButton"></button>
     </div>
   </div>
   <template class="template-element">

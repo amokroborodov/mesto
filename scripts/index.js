@@ -1,39 +1,46 @@
-const popup = document.querySelector('.popup');
+const popupEditProfile = document.querySelector('#popupEditProfile');
+const popupAddElement = document.querySelector('#popupAddElement');
+const elementAddButton = document.querySelector('.profile__add-button');
 const profileEditButton = document.querySelector('.profile__edit-button');
-const popupCloseButton = document.querySelector('.popup__close-button');
+const editProfileCloseButton = document.querySelector('#editProfileCloseButton');
+const addElementCloseButton = document.querySelector('#addElementCloseButton');
 const popupForm = document.querySelector('.popup__form');
 const popupInputName = document.querySelector('.popup__input_type_name');
 const profileName = document.querySelector('.profile__name');
 const popupInputDescription = document.querySelector('.popup__input_type_description');
 const profileDescription = document.querySelector('.profile__description');
 
-function closePopup() {
-  popup.classList.remove('popup_opened');
+function closePopupEditProfile() {
+  popupEditProfile.classList.remove('popup_opened');
 }
 
-function openPopup() {
-  popup.classList.add('popup_opened');
+function closePopupAddElement() {
+  popupAddElement.classList.remove('popup_opened');
+}
+
+function openPopupEditProfile() {
+  popupEditProfile.classList.add('popup_opened');
   popupInputName.value = profileName.textContent;
   popupInputDescription.value = profileDescription.textContent;
+}
+
+function openPopupAddElement() {
+  popupAddElement.classList.add('popup_opened');
 }
 
 function submitForm(event) {
   event.preventDefault();
   profileName.textContent = popupInputName.value;
   profileDescription.textContent = popupInputDescription.value;
-  closePopup();
+  closePopupEditProfile();
 }
 
-// function popupClickHandler(event) {
-//     if (event.target.classList.contains('popup')) {
-//         closePopup();
-//     }
-// }
 
-profileEditButton.addEventListener('click', openPopup);
+profileEditButton.addEventListener('click', openPopupEditProfile);
+elementAddButton.addEventListener('click', openPopupAddElement);
 
-popupCloseButton.addEventListener('click', closePopup);
-// popup.addEventListener('mouseup', popupClickHandler);
+editProfileCloseButton.addEventListener('click', closePopupEditProfile);
+addElementCloseButton.addEventListener('click', closePopupAddElement);
 
 popupForm.addEventListener('submit', submitForm);
 
@@ -85,3 +92,5 @@ function appendElement(item) {
 }
 
 initialElements.forEach(appendElement);
+
+
