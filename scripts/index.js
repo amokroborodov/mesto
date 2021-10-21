@@ -73,6 +73,9 @@ function createElement(item) {
   element.querySelector('.element__like-button').addEventListener('click', (evt) => {
     evt.target.classList.toggle('element__like-button_active');
   });
+  element.querySelector('.element__delete-button').addEventListener('click', (evt) => {
+    evt.target.closest('.element').remove();
+  });
   return element;
 }
 
