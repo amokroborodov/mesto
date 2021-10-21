@@ -67,10 +67,13 @@ const initialElements = [
 ];
 
 function createElement(item) {
-  templateElement.querySelector('.element__pic-caption').textContent = item.name;
-  templateElement.querySelector('.element__pic').src = item.link;
-  return templateElement.querySelector('.element').cloneNode(true);
-
+  const element = templateElement.querySelector('.element').cloneNode(true);
+  element.querySelector('.element__pic-caption').textContent = item.name;
+  element.querySelector('.element__pic').src = item.link;
+  element.querySelector('.element__like-button').addEventListener('click', (evt) => {
+    evt.target.classList.toggle('element__like-button_active');
+  });
+  return element;
 }
 
 function appendElement(item) {
