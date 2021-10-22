@@ -35,14 +35,14 @@
   </div>
   <div class="popup" id="popupEditProfile">
     <div class="popup__content">
-      <form class="popup__form" name="edit-profile-form">
+      <form class="popup__form" name="edit-profile-form" id="popupEditProfileForm">
         <h2 class="popup__title">Редактировать профиль</h2>
         <fieldset class="popup__fieldset">
           <input type="text" class="popup__input popup__input_type_name"
                  placeholder="Ваше имя" required
-                 name="popup-form-name">
+                 name="popup-form-name" id="popupEditProfileInputName">
           <input type="text" class="popup__input popup__input_type_description"
-                 placeholder="Расскажите о себе" required name="popup-form-description">
+                 placeholder="Расскажите о себе" required name="popup-form-description" id="popupEditProfileInputDescription">
         </fieldset>
         <button class="popup__submit-button" type="submit">Сохранить</button>
       </form>
@@ -52,20 +52,29 @@
 
   <div class="popup" id="popupAddElement">
     <div class="popup__content">
-      <form class="popup__form" name="add-element-form">
+      <form class="popup__form" name="add-element-form" id="popupAddElementForm">
         <h2 class="popup__title">Новое место</h2>
         <fieldset class="popup__fieldset">
           <input type="text" class="popup__input popup__input_type_name"
                  placeholder="Название" required
-                 name="popup-form-name">
+                 name="popup-form-name" id="popupAddElementInputName">
           <input type="text" class="popup__input popup__input_type_description"
-                 placeholder="Ссылка на картинку" required name="popup-form-description">
+                 placeholder="Ссылка на картинку" required name="popup-form-description" id="popupAddElementInputLink">
         </fieldset>
         <button class="popup__submit-button" type="submit">Сохранить</button>
       </form>
       <button class="popup__close-button" type="button" id="addElementCloseButton"></button>
     </div>
   </div>
+
+  <div class="popup popup_opened popupPicOverlay" id="popupPicture">
+    <div class="popup__pictureContent">
+      <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg" alt="" class="popup__picture">
+      <p class="popup__picCapture">Байкал</p>
+      <button class="popup__close-button" type="button" id="popupPictureCloseButton"></button>
+    </div>
+  </div>
+
   <template class="template-element">
     <article class="element">
       <img src="" alt="" class="element__pic">
