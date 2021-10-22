@@ -1,44 +1,129 @@
+/* Общая логика */
+function showPopup(popup) {
+  popup.classList.remove('animationFadeOut');
+  popup.classList.add('popup_opened', 'animationFadeIn');
+}
+
+function hidePopup(popup) {
+  popup.classList.remove('popup_opened', 'animationFadeIn');
+  popup.classList.add('animationFadeOut');
+}
+
+/* Редактирование профиля */
 const popupEditProfile = document.querySelector('#popupEditProfile');
 const profileEditButton = document.querySelector('.profile__edit-button');
 const editProfileCloseButton = document.querySelector('#editProfileCloseButton');
-const popupEditProfileForm = document.querySelector('#popupEditProfileForm');
 const popupEditProfileInputName = document.querySelector('#popupEditProfileInputName');
 const profileName = document.querySelector('.profile__name');
 const popupEditProfileInputDescription = document.querySelector('#popupEditProfileInputDescription');
 const profileDescription = document.querySelector('.profile__description');
+const popupEditProfileForm = document.querySelector('#popupEditProfileForm');
 
 
+function handleProfileEditClose() {
+  hidePopup(popupEditProfile);
+}
+
+function handleProfileEditOpen() {
+  popupEditProfileInputName.value = profileName.textContent;
+  popupEditProfileInputDescription.value = profileDescription.textContent;
+
+  showPopup(popupEditProfile);
+}
+
+function handleProfileSubmit(event) {
+  event.preventDefault();
+
+  profileName.textContent = popupEditProfileInputName.value;
+  profileDescription.textContent = popupEditProfileInputDescription.value;
+
+  hidePopup(popupEditProfile);
+}
+
+
+profileEditButton.addEventListener('click', handleProfileEditOpen);
+editProfileCloseButton.addEventListener('click', handleProfileEditClose);
+popupEditProfileForm.addEventListener('submit', handleProfileSubmit);
+
+/* Добавление карточки */
 const popupAddElement = document.querySelector('#popupAddElement');
 const elementAddButton = document.querySelector('.profile__add-button');
 const addElementCloseButton = document.querySelector('#addElementCloseButton');
 const popupAddElementForm = document.querySelector('#popupAddElementForm');
+const templateElement = document.querySelector('.template-element .element').content;
 const popupAddElementInputName = document.querySelector('#popupAddElementInputName');
-const popupAddElementInputLink = document.querySelector('#popupAddElementInputLink')
+const popupAddElementInputLink = document.querySelector('#popupAddElementInputLink');
 
-
-
-
-
-function closePopupEditProfile() {
-  popupEditProfile.classList.remove('popup_opened');
+function createElement(item) {
+  const element = templateElement.cloneNode(true);
+  element.querySelector('.element__pic-caption').textContent = item.name;
+  element.querySelector('.element__pic').src = item.link;
+  element.querySelector('.element__like-button').addEventListener('click', (evt) => {
+    evt.target.classList.toggle('element__like-button_active');
+  });
+  element.querySelector('.element__delete-button').addEventListener('click', (evt) => {
+    evt.target.closest('.element').remove();
+  });
+  element.querySelector('.element__pic').addEventListener('click', showPicturePopupHandler);
+  return element;
 }
 
-function closePopupAddElement() {
-  popupAddElement.classList.remove('popup_opened');
+function appendElement(item) {
+  const element = createElement(item);
+  elements.append(element);
 }
 
-function openPopupEditProfile() {
-  popupEditProfile.classList.add('popup_opened');
-  popupEditProfileInputName.value = profileName.textContent;
-  popupEditProfileInputDescription.value = profileDescription.textContent;
+function prependElement(item) {
+  const element = createElement(item);
+  elements.prepend(element);
 }
 
-function openPopupAddElement() {
-  popupAddElement.classList.add('popup_opened');
+function addElementButtonHandler() {
+  showPopup(popupAddElement);
+}
+
+function closeElementPopupHandler() {
+  hidePopup(popupAddElement);
+}
+
+function addElementSubmitHandler(event) {
+  event.preventDefault();
+
+  const name = popupAddElementInputName.value;
+  const link = popupAddElementInputLink.value;
+
+
+  prependElement({name, link});
+
+  hidePopup(popupAddElement);
 }
 
 
-const templateElement = document.querySelector('.template-element').content;
+elementAddButton.addEventListener('click', addElementButtonHandler);
+addElementCloseButton.addEventListener('click', closeElementPopupHandler);
+popupAddElementForm.addEventListener('submit', addElementSubmitHandler);
+
+
+/* Отображение карточки в попапе */
+const popupForPicture = document.querySelector('#popupPicture');
+const popupPictureCloseButton = document.querySelector('#popupPictureCloseButton');
+const popupPicture = document.querySelector('.popup__picture');
+const popupPicCapture = document.querySelector('.popup__picCapture');
+
+function showPicturePopupHandler(evt) {
+  popupPicture.src = evt.target.src;
+  popupPicCapture.textContent = evt.target.nextElementSibling.nextElementSibling.firstElementChild.textContent;
+
+  showPopup(popupForPicture);
+}
+
+function closePicturePopupHandler() {
+  hidePopup(popupForPicture);
+}
+
+popupPictureCloseButton.addEventListener('click', closePicturePopupHandler);
+
+/* Рендеринг списка */
 const elements = document.querySelector('.elements');
 const initialElements = [
   {
@@ -67,59 +152,6 @@ const initialElements = [
   }
 ];
 
+
 initialElements.forEach(appendElement);
-
-
-function editProfile(event) {
-  event.preventDefault();
-  profileName.textContent = popupEditProfileInputName.value;
-  profileDescription.textContent = popupEditProfileInputDescription.value;
-  closePopupEditProfile();
-}
-popupEditProfileForm.addEventListener('submit', editProfile);
-
-function createElement(item) {
-  const element = templateElement.querySelector('.element').cloneNode(true);
-  element.querySelector('.element__pic-caption').textContent = item.name;
-  element.querySelector('.element__pic').src = item.link;
-  element.querySelector('.element__like-button').addEventListener('click', (evt) => {
-    evt.target.classList.toggle('element__like-button_active');
-  });
-  element.querySelector('.element__delete-button').addEventListener('click', (evt) => {
-    evt.target.closest('.element').remove();
-  });
-  return element;
-}
-
-function appendElement(item) {
-  const element = createElement(item);
-  elements.append(element);
-}
-
-function prependElement(item) {
-  const element = createElement(item);
-  elements.prepend(element);
-}
-
-function addElement(event) {
-  event.preventDefault();
-  const name = popupAddElementInputName.value;
-  const link = popupAddElementInputLink.value;
-  const item = {
-    name: name,
-    link: link,
-  };
-  prependElement(item);
-  closePopupAddElement();
-}
-popupAddElementForm.addEventListener('submit', addElement);
-
-
-profileEditButton.addEventListener('click', openPopupEditProfile);
-elementAddButton.addEventListener('click', openPopupAddElement);
-
-editProfileCloseButton.addEventListener('click', closePopupEditProfile);
-addElementCloseButton.addEventListener('click', closePopupAddElement);
-
-
 

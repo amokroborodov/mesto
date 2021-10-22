@@ -1,0 +1,3 @@
+.animationFadeOut {
+  transition: visibility 0.1s, opacity 0.1s linear;
+}

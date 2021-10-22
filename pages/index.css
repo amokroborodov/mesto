@@ -45,3 +45,6 @@
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__text/footer__text.css);
+
+@import url(../blocks/animationFadeIn/animationFadeIn.css);
+@import url(../blocks/animationFadeOut/animationFadeOut.css);
