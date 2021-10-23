@@ -59,7 +59,7 @@ function createElement(item) {
   element.querySelector('.element__pic-caption').textContent = item.name;
   const picture = element.querySelector('.element__pic');
   picture.src = item.link;
-  picture.alt = `Фото, на котором изображен/а ${item.name}`
+  picture.alt = item.name;
   element.querySelector('.element__like-button').addEventListener('click', (evt) => {
     evt.target.classList.toggle('element__like-button_active');
   });
@@ -116,8 +116,8 @@ const popupPicCapture = document.querySelector('.popup__picCapture');
 
 function showPicturePopupHandler(evt) {
   popupPicture.src = evt.target.src;
-  popupPicCapture.textContent = evt.target.nextElementSibling.nextElementSibling.firstElementChild.textContent;
-
+  popupPicture.alt = evt.target.alt;
+  popupPicCapture.textContent = evt.target.alt;
   showPopup(popupForPicture);
 }
 
