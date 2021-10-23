@@ -57,7 +57,9 @@ const popupAddElementInputLink = document.querySelector('#popupAddElementInputLi
 function createElement(item) {
   const element = templateElement.querySelector('.element').cloneNode(true);
   element.querySelector('.element__pic-caption').textContent = item.name;
-  element.querySelector('.element__pic').src = item.link;
+  const picture = element.querySelector('.element__pic');
+  picture.src = item.link;
+  picture.alt = `Фото, на котором изображен/а ${item.name}`
   element.querySelector('.element__like-button').addEventListener('click', (evt) => {
     evt.target.classList.toggle('element__like-button_active');
   });
@@ -94,6 +96,8 @@ function addElementSubmitHandler(event) {
 
 
   prependElement({name, link});
+
+  event.target.reset();
 
   hidePopup(popupAddElement);
 }
