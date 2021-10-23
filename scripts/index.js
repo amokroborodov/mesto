@@ -50,12 +50,12 @@ const popupAddElement = document.querySelector('#popupAddElement');
 const elementAddButton = document.querySelector('.profile__add-button');
 const addElementCloseButton = document.querySelector('#addElementCloseButton');
 const popupAddElementForm = document.querySelector('#popupAddElementForm');
-const templateElement = document.querySelector('.template-element .element').content;
+const templateElement = document.querySelector('.template-element').content;
 const popupAddElementInputName = document.querySelector('#popupAddElementInputName');
 const popupAddElementInputLink = document.querySelector('#popupAddElementInputLink');
 
 function createElement(item) {
-  const element = templateElement.cloneNode(true);
+  const element = templateElement.querySelector('.element').cloneNode(true);
   element.querySelector('.element__pic-caption').textContent = item.name;
   element.querySelector('.element__pic').src = item.link;
   element.querySelector('.element__like-button').addEventListener('click', (evt) => {
