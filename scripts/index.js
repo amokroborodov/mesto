@@ -1,4 +1,5 @@
 /* Общая логика */
+
 function showPopup(popup) {
   popup.classList.remove('animationFadeOut');
   popup.classList.add('popup_opened', 'animationFadeIn');
@@ -158,4 +159,6 @@ const initialElements = [
 
 
 initialElements.forEach(appendElement);
+
+
 

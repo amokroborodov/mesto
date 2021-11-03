@@ -10,7 +10,3 @@
   color: #000000;
   box-sizing: border-box;
 }
-
-.popup__input:not(:last-child) {
-  margin-bottom: 30px;
-}

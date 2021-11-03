@@ -38,12 +38,18 @@
       <form class="popup__form" name="edit-profile-form" id="popupEditProfileForm">
         <h2 class="popup__title">Редактировать профиль</h2>
         <fieldset class="popup__fieldset">
-          <input type="text" class="popup__input popup__input_type_name"
-                 placeholder="Ваше имя" required
-                 name="popup-form-name" id="popupEditProfileInputName" minlength="2" maxlength="40">
-          <input type="text" class="popup__input popup__input_type_description"
-                 placeholder="Расскажите о себе" required name="popup-form-description"
-                 id="popupEditProfileInputDescription" minlength="2" maxlength="200">
+          <div class="popup__input-wrapper">
+            <input type="text" class="popup__input popup__input_type_name"
+                   placeholder="Ваше имя" required
+                   name="popup-form-name" id="popupEditProfileInputName" minlength="2" maxlength="40">
+            <span class="popup__error_visible"></span>
+          </div>
+          <div class="popup__input-wrapper">
+            <input type="text" class="popup__input popup__input_type_description"
+                   placeholder="Расскажите о себе" required name="popup-form-description"
+                   id="popupEditProfileInputDescription" minlength="2" maxlength="200">
+            <span class="popup__error_visible"></span>
+          </div>
         </fieldset>
         <button class="popup__submit-button" type="submit">Сохранить</button>
       </form>
@@ -56,11 +62,18 @@
       <form class="popup__form" name="add-element-form" id="popupAddElementForm">
         <h2 class="popup__title">Новое место</h2>
         <fieldset class="popup__fieldset">
-          <input type="text" class="popup__input popup__input_type_name"
-                 placeholder="Название" required
-                 name="popup-form-name" id="popupAddElementInputName" minlength="2" maxlength="30" >
-          <input type="url" class="popup__input popup__input_type_description"
-                 placeholder="Ссылка на картинку" required name="popup-form-description" id="popupAddElementInputLink">
+          <div class="popup__input-wrapper">
+            <input type="text" class="popup__input popup__input_type_name"
+                   placeholder="Название" required
+                   name="popup-form-name" id="popupAddElementInputName" minlength="2" maxlength="30">
+            <span class="popup__error_visible"></span>
+          </div>
+          <div class="popup__input-wrapper">
+            <input type="url" class="popup__input popup__input_type_description"
+                   placeholder="Ссылка на картинку" required name="popup-form-description"
+                   id="popupAddElementInputLink">
+            <span class="popup__error_visible"></span>
+          </div>
         </fieldset>
         <button class="popup__submit-button" type="submit">Сохранить</button>
       </form>
@@ -87,5 +100,6 @@
     </article>
   </template>
   <script src="scripts/index.js"></script>
+  <script src="scripts/validation.js"></script>
 </body>
 </html>
