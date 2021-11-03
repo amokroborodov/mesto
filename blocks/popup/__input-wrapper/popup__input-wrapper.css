@@ -1,4 +1,3 @@
-.popup__input-wrapper:not(:last-child) {
-  margin-bottom: 13px;
-  min-height: 44px;
+.popup__input-wrapper {
+  position: relative;
 }

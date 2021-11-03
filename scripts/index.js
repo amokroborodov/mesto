@@ -1,8 +1,20 @@
 /* Общая логика */
+const config = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  inputErrorClass: 'popup__input_state_invalid',
+  submitButtonSelector: '.popup__submit-button',
+  submitButtonErrorClass: 'popup__submit-button_state_invalid',
+  inactiveButtonClass: 'popup__submit-button_disabled',
+  errorClass: 'popup__error_visible'
+}
 
 function showPopup(popup) {
   popup.classList.remove('animationFadeOut');
   popup.classList.add('popup_opened', 'animationFadeIn');
+
+  const form = popup.querySelector(config.formSelector)
+  setSubmitButtonState(form, config)
 }
 
 function hidePopup(popup) {
@@ -159,6 +171,9 @@ const initialElements = [
 
 
 initialElements.forEach(appendElement);
+
+
+enableValidation(config);
 
 
 

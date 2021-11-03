@@ -35,20 +35,20 @@
   </div>
   <div class="popup" id="popupEditProfile">
     <div class="popup__content">
-      <form class="popup__form" name="edit-profile-form" id="popupEditProfileForm">
+      <form class="popup__form" name="edit-profile-form" id="popupEditProfileForm" novalidate>
         <h2 class="popup__title">Редактировать профиль</h2>
         <fieldset class="popup__fieldset">
           <div class="popup__input-wrapper">
             <input type="text" class="popup__input popup__input_type_name"
                    placeholder="Ваше имя" required
                    name="popup-form-name" id="popupEditProfileInputName" minlength="2" maxlength="40">
-            <span class="popup__error_visible"></span>
+            <span class="popup__error popup__error_visible" id="popupEditProfileInputName-error"></span>
           </div>
           <div class="popup__input-wrapper">
             <input type="text" class="popup__input popup__input_type_description"
                    placeholder="Расскажите о себе" required name="popup-form-description"
                    id="popupEditProfileInputDescription" minlength="2" maxlength="200">
-            <span class="popup__error_visible"></span>
+            <span class="popup__error popup__error_visible" id="popupEditProfileInputDescription-error"></span>
           </div>
         </fieldset>
         <button class="popup__submit-button" type="submit">Сохранить</button>
@@ -59,20 +59,20 @@
 
   <div class="popup" id="popupAddElement">
     <div class="popup__content">
-      <form class="popup__form" name="add-element-form" id="popupAddElementForm">
+      <form class="popup__form" name="add-element-form" id="popupAddElementForm" novalidate>
         <h2 class="popup__title">Новое место</h2>
         <fieldset class="popup__fieldset">
           <div class="popup__input-wrapper">
             <input type="text" class="popup__input popup__input_type_name"
                    placeholder="Название" required
                    name="popup-form-name" id="popupAddElementInputName" minlength="2" maxlength="30">
-            <span class="popup__error_visible"></span>
+            <span class="popup__error popup__error_visible" id="popupAddElementInputName-error"></span>
           </div>
           <div class="popup__input-wrapper">
             <input type="url" class="popup__input popup__input_type_description"
                    placeholder="Ссылка на картинку" required name="popup-form-description"
                    id="popupAddElementInputLink">
-            <span class="popup__error_visible"></span>
+            <span class="popup__error popup__error_visible" id="popupAddElementInputLink-error"></span>
           </div>
         </fieldset>
         <button class="popup__submit-button" type="submit">Сохранить</button>
@@ -99,7 +99,7 @@
       </div>
     </article>
   </template>
-  <script src="scripts/index.js"></script>
   <script src="scripts/validation.js"></script>
+  <script src="scripts/index.js"></script>
 </body>
 </html>
