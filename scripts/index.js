@@ -22,6 +22,21 @@ function hidePopup(popup) {
   popup.classList.add('animationFadeOut');
 }
 
+function popupEscCloseHandler(event) {
+  if (event.key === "Escape") {
+    const openedPopup = document.querySelector('.popup_opened');
+
+    if (!openedPopup) {
+      return;
+    }
+
+    hidePopup(openedPopup);
+  }
+}
+
+window.addEventListener('keydown', popupEscCloseHandler);
+
+
 /* Редактирование профиля */
 const popupEditProfile = document.querySelector('#popupEditProfile');
 const profileEditButton = document.querySelector('.profile__edit-button');
@@ -52,6 +67,15 @@ function handleProfileSubmit(event) {
 
   hidePopup(popupEditProfile);
 }
+
+function editProfileOverlayCloseHandler(event) {
+  if (event.target.classList.contains('popup')) {
+    hidePopup(popupEditProfile);
+  }
+}
+
+popupEditProfile.addEventListener('mouseup', editProfileOverlayCloseHandler);
+
 
 
 profileEditButton.addEventListener('click', handleProfileEditOpen);
@@ -115,6 +139,14 @@ function addElementSubmitHandler(event) {
   hidePopup(popupAddElement);
 }
 
+function addElementCloseHandler(event) {
+  if (event.target.classList.contains('popup')) {
+    hidePopup(popupAddElement);
+  }
+}
+
+popupAddElement.addEventListener('mouseup', addElementCloseHandler);
+
 
 elementAddButton.addEventListener('click', addElementButtonHandler);
 addElementCloseButton.addEventListener('click', closeElementPopupHandler);
@@ -137,6 +169,14 @@ function showPicturePopupHandler(evt) {
 function closePicturePopupHandler() {
   hidePopup(popupForPicture);
 }
+
+function popupForPictureOverlayCloseHandler(event) {
+  if (event.target.classList.contains('popup')) {
+    hidePopup(popupForPicture);
+  }
+}
+
+popupForPicture.addEventListener('mouseup', popupForPictureOverlayCloseHandler);
 
 popupPictureCloseButton.addEventListener('click', closePicturePopupHandler);
 
@@ -174,6 +214,11 @@ initialElements.forEach(appendElement);
 
 
 enableValidation(config);
+
+
+
+
+
 
 
 
