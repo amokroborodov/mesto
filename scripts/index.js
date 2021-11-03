@@ -13,28 +13,29 @@ function showPopup(popup) {
   popup.classList.remove('animationFadeOut');
   popup.classList.add('popup_opened', 'animationFadeIn');
 
-  const form = popup.querySelector(config.formSelector)
-  setSubmitButtonState(form, config)
+  const form = popup.querySelector(config.formSelector);
+  if (form) {
+    setSubmitButtonState(form, config);
+  }
+
+  window.addEventListener('keydown', popupEscCloseHandler);
 }
 
 function hidePopup(popup) {
   popup.classList.remove('popup_opened', 'animationFadeIn');
   popup.classList.add('animationFadeOut');
+
+  window.removeEventListener('keydown', popupEscCloseHandler);
+
 }
 
 function popupEscCloseHandler(event) {
   if (event.key === "Escape") {
     const openedPopup = document.querySelector('.popup_opened');
 
-    if (!openedPopup) {
-      return;
-    }
-
     hidePopup(openedPopup);
   }
 }
-
-window.addEventListener('keydown', popupEscCloseHandler);
 
 
 /* Редактирование профиля */
@@ -75,7 +76,6 @@ function editProfileOverlayCloseHandler(event) {
 }
 
 popupEditProfile.addEventListener('mouseup', editProfileOverlayCloseHandler);
-
 
 
 profileEditButton.addEventListener('click', handleProfileEditOpen);
