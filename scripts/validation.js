@@ -22,7 +22,7 @@ function handleSubmit(evt) {
 function setSubmitButtonState(form, config) {
     const button = form.querySelector(config.submitButtonSelector);
     button.disabled = !form.checkValidity();
-    button.classList.toggle('config.submitButtonErrorClass', !form.checkValidity())
+    button.classList.toggle(config.submitButtonErrorClass, !form.checkValidity())
 }
 
 function handleFieldValidation(inputElement, form, config) {
