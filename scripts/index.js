@@ -1,5 +1,5 @@
 import { Card } from "./card.mjs";
-import { showPopup, hidePopup, closeHandler, handleOverlay } from "./popups.js";
+import { showPopup, hidePopup, handleOverlay } from "./popups.js";
 
 /* Общая логика */
 const config = {
