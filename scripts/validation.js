@@ -1,6 +1,6 @@
 
 
-function enableValidation(config) {
+export function enableValidation(config) {
     const forms = [...document.querySelectorAll(config.formSelector)];
     forms.forEach((form) => setFormListeners(form, config));
 }
@@ -19,7 +19,7 @@ function handleSubmit(evt) {
     evt.preventDefault();
 }
 
-function setSubmitButtonState(form, config) {
+export function setSubmitButtonState(form, config) {
     const button = form.querySelector(config.submitButtonSelector);
     button.disabled = !form.checkValidity();
     button.classList.toggle(config.submitButtonErrorClass, !form.checkValidity())

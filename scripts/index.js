@@ -1,7 +1,7 @@
-import { Card } from "./card.mjs";
+import { Card } from "./card.js";
 import { showPopup, hidePopup, handleOverlay } from "./popups.js";
+import { enableValidation, setSubmitButtonState } from "./validation.js"
 
-/* Общая логика */
 const config = {
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
@@ -47,16 +47,14 @@ popupEditProfile.addEventListener('mouseup', handleOverlay);
 profileEditButton.addEventListener('click', handleProfileEditOpen);
 popupEditProfileForm.addEventListener('submit', handleProfileSubmit);
 
-/* Добавление карточки */
 
+/* Добавление карточки */
 const popupAddElement = document.querySelector('#popupAddElement');
 const elementAddButton = document.querySelector('.profile__add-button');
 const popupAddElementForm = document.querySelector('#popupAddElementForm');
 const templateElement = '.template-element';
 const popupAddElementInputName = document.querySelector('#popupAddElementInputName');
 const popupAddElementInputLink = document.querySelector('#popupAddElementInputLink');
-
-
 
 function addElementButtonHandler() {
   const form = document.querySelector('#popupAddElement').querySelector(config.formSelector);
