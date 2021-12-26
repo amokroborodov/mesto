@@ -1,6 +1,6 @@
-import { Card } from "./card.js";
-import { showPopup, hidePopup, handleOverlay } from "./popups.js";
-import { enableValidation, setSubmitButtonState } from "./validation.js"
+import {Card} from "./card.js";
+import {showPopup, hidePopup, handleOverlay} from "./popups.js";
+import {FormValidator} from "./validation.js"
 
 const config = {
   formSelector: '.popup__form',
@@ -25,9 +25,6 @@ const popupEditProfileForm = document.querySelector('#popupEditProfileForm');
 function handleProfileEditOpen() {
   popupEditProfileInputName.value = profileName.textContent;
   popupEditProfileInputDescription.value = profileDescription.textContent;
-
-  const form = popupEditProfile.querySelector(config.formSelector);
-  setSubmitButtonState(form, config);
 
   showPopup(popupEditProfile);
 }
@@ -57,8 +54,6 @@ const popupAddElementInputName = document.querySelector('#popupAddElementInputNa
 const popupAddElementInputLink = document.querySelector('#popupAddElementInputLink');
 
 function addElementButtonHandler() {
-  const form = document.querySelector('#popupAddElement').querySelector(config.formSelector);
-  setSubmitButtonState(form, config);
   showPopup(popupAddElement);
 }
 
@@ -125,11 +120,11 @@ const initialElements = [
 initialElements.forEach(appendElement);
 
 
-enableValidation(config);
-
-
-
-
+const forms = document.querySelectorAll(config.formSelector);
+forms.forEach((form) => {
+  const validator = new FormValidator(config, form);
+  validator.enableValidation();
+});
 
 
 
