@@ -1,6 +1,6 @@
-import {Card} from "./card.js";
+import {Card} from "./Card.js";
 import {showPopup, hidePopup, handleOverlay} from "./popups.js";
-import {FormValidator} from "./validation.js"
+import {FormValidator} from "./FormValidator.js"
 
 const config = {
   formSelector: '.popup__form',
@@ -45,17 +45,15 @@ profileEditButton.addEventListener('click', handleProfileEditOpen);
 popupEditProfileForm.addEventListener('submit', handleProfileSubmit);
 
 
+
+
 /* Добавление карточки */
 const popupAddElement = document.querySelector('#popupAddElement');
 const elementAddButton = document.querySelector('.profile__add-button');
 const popupAddElementForm = document.querySelector('#popupAddElementForm');
-const templateElement = '.template-element';
+const templateElementSelector = '.template-element';
 const popupAddElementInputName = document.querySelector('#popupAddElementInputName');
 const popupAddElementInputLink = document.querySelector('#popupAddElementInputLink');
-
-function addElementButtonHandler() {
-  showPopup(popupAddElement);
-}
 
 function addElementSubmitHandler(event) {
   event.preventDefault();
@@ -71,19 +69,19 @@ function addElementSubmitHandler(event) {
 }
 
 function appendElement(item) {
-  const element = new Card(item.name, item.link, templateElement);
+  const element = new Card(item.name, item.link, templateElementSelector);
   elements.append(element.buildElement());
 
 }
 
 function prependElement(item) {
-  const element = new Card(item.name, item.link, templateElement);
+  const element = new Card(item.name, item.link, templateElementSelector);
   elements.prepend(element.buildElement());
 }
 
 popupAddElement.addEventListener('mouseup', handleOverlay);
 
-elementAddButton.addEventListener('click', addElementButtonHandler);
+elementAddButton.addEventListener('click', () => showPopup(popupAddElement));
 popupAddElementForm.addEventListener('submit', addElementSubmitHandler);
 
 
