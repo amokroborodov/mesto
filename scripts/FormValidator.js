@@ -1,4 +1,3 @@
-
 export class FormValidator {
   constructor(config, form) {
     this.config = config;
@@ -11,7 +10,7 @@ export class FormValidator {
     const inputs = [...this.form.querySelectorAll(this.config.inputSelector)];
     inputs.forEach(inputElement => {
       inputElement.addEventListener('input', () => this._handleFieldValidation(inputElement));
-    })
+    });
   }
 
   _setSubmitButtonState() {
@@ -42,6 +41,10 @@ export class FormValidator {
     const errorElement = this.form.querySelector(`#${inputElement.id}-error`);
     errorElement.classList.remove(this.config.inputErrorClass);
     errorElement.textContent = '';
+  }
+
+  setInitialValidationState() {
+    this._setSubmitButtonState();
   }
 
   enableValidation() {

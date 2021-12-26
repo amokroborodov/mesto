@@ -12,6 +12,7 @@ const config = {
   errorClass: 'popup__error_visible'
 }
 
+const validators = {};
 
 /* Редактирование профиля */
 const popupEditProfile = document.querySelector('#popupEditProfile');
@@ -26,7 +27,7 @@ function handleProfileEditOpen() {
   popupEditProfileInputName.value = profileName.textContent;
   popupEditProfileInputDescription.value = profileDescription.textContent;
 
-  showPopup(popupEditProfile);
+  showPopup(popupEditProfile, validators[popupEditProfileForm.id]);
 }
 
 function handleProfileSubmit(event) {
@@ -43,8 +44,6 @@ popupEditProfile.addEventListener('mouseup', handleOverlay);
 
 profileEditButton.addEventListener('click', handleProfileEditOpen);
 popupEditProfileForm.addEventListener('submit', handleProfileSubmit);
-
-
 
 
 /* Добавление карточки */
@@ -81,7 +80,9 @@ function prependElement(item) {
 
 popupAddElement.addEventListener('mouseup', handleOverlay);
 
-elementAddButton.addEventListener('click', () => showPopup(popupAddElement));
+elementAddButton.addEventListener('click', () => {
+  showPopup(popupAddElement, validators[popupAddElementForm.id]);
+});
 popupAddElementForm.addEventListener('submit', addElementSubmitHandler);
 
 
@@ -122,8 +123,7 @@ const forms = document.querySelectorAll(config.formSelector);
 forms.forEach((form) => {
   const validator = new FormValidator(config, form);
   validator.enableValidation();
+
+  validators[form.id] = validator;
 });
-
-
-
 

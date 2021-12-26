@@ -1,4 +1,6 @@
-export function showPopup(popup) {
+export function showPopup(popup, validator) {
+  validator.setInitialValidationState();
+
   popup.classList.remove('animationFadeOut');
   popup.classList.add('popup_opened', 'animationFadeIn');
 
