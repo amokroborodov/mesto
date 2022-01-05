@@ -1,6 +1,7 @@
 import {Card} from "./Card.js";
 import {showPopup, hidePopup, handleOverlay} from "./popups.js";
-import {FormValidator} from "./FormValidator.js"
+import {FormValidator} from "./FormValidator.js";
+import Section from "./Section.js";
 
 const config = {
   formSelector: '.popup__form',
@@ -67,12 +68,6 @@ function addElementSubmitHandler(event) {
   hidePopup(popupAddElement);
 }
 
-function appendElement(item) {
-  const element = new Card(item.name, item.link, templateElementSelector);
-  elements.append(element.buildElement());
-
-}
-
 function prependElement(item) {
   const element = new Card(item.name, item.link, templateElementSelector);
   elements.prepend(element.buildElement());
@@ -115,9 +110,13 @@ const initialElements = [
   }
 ];
 
-
-initialElements.forEach(appendElement);
-
+const initialCards = new Section({
+  items: initialElements, renderer: (item) => {
+    const element = new Card(item.name, item.link, templateElementSelector);
+    initialCards.addItem(element.buildElement());
+  }
+}, elements);
+initialCards.renderItems();
 
 const forms = document.querySelectorAll(config.formSelector);
 forms.forEach((form) => {
